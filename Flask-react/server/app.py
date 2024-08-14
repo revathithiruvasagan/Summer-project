@@ -5,7 +5,7 @@ from flask_bcrypt import Bcrypt
 from flask_cors import CORS
 from models import db, User
 
-# Load environment variables
+
 load_dotenv()
 
 class Config:

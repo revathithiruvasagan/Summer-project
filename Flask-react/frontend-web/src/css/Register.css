@@ -1,0 +1,121 @@
+.register-page {
+  --primary-color: #acf372;
+  --font-color: #333;
+  --input-border-color: #006400;
+  --placeholder-color: #999; /* Custom color for the placeholder */
+  --bg-color: #f4f4f4;
+  --container-bg-color: #e0f7e4;
+}
+
+.register-page body {
+  font-family: "Outfit", sans-serif;
+  background-color: #99dc90;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.register-page .container {
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  width: 450px;
+}
+
+.register-page h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.register-page input[type="email"],
+.register-page input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: 2px solid var(--input-border-color);
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.3s ease, color 0.3s ease; /* Smooth transition for the border color and text color */
+}
+
+.register-page input[type="email"]::placeholder,
+.register-page input[type="password"]::placeholder {
+  color: var(--placeholder-color); /* Placeholder color */
+  font-size: 16px; /* Optional: Italicize the placeholder text */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.register-page input[type="email"]:focus::placeholder,
+.register-page input[type="password"]:focus::placeholder {
+  opacity: 0; /* Gradually hide the placeholder when focused */
+}
+
+.register-page input[type="email"]:focus,
+.register-page input[type="password"]:focus {
+  border-color: var(--input-border-color);
+  outline: none; /* Remove default outline */
+  box-shadow: none; /* Remove the blue shadow */
+}
+
+.register-page button {
+  width: 60%;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.register-page button:hover {
+  background-color: #8bc34a;
+}
+
+.register-page .checkbox {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.register-page .checkbox label {
+  font-size: 14px;
+}
+
+.register-page .text-body,
+.register-page .link-danger {
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--font-color);
+}
+
+.register-page .link-danger:hover,
+.register-page .text-body:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.register-page p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-page p a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+.register-page p a:hover {
+  color: var(--primary-color);
+  text-decoration: underline;
+}

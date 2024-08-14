@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -6,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginSuccess, loginFailure } from "../redux/userActions";
 import InputField from "../components/InputField";
 import Checkbox from "../components/Checkbox";
+import "../css/Login.css";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -75,47 +75,47 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <h2>Log Into Your Account</h2>
-
-      <InputField
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        id="loginEmail"
-        placeholder="Enter a valid email address"
-        label="Email address"
-      />
-      {emailError && <p style={{ color: "red" }}>{emailError}</p>}
-
-      <InputField
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        id="loginPassword"
-        placeholder="Enter password"
-        label="Password"
-      />
-      {passwordError && <p style={{ color: "red" }}>{passwordError}</p>}
-
-      <div>
-        <Checkbox id="rememberMe" label="Remember me" />
-        <a href="#!" className="text-body">
-          Forgot password?
-        </a>
-      </div>
-
-      <div>
-        <button type="button" onClick={logInUser} disabled={isLoading}>
-          {isLoading ? "Logging in..." : "Login"}
-        </button>
-        {serverError && <p style={{ color: "red" }}>{serverError}</p>}
-        <p>
-          Don't have an account?{" "}
-          <a href="/register" className="link-danger">
-            Register
+    <div className="login-page">
+      <div className="container">
+        {" "}
+        {/* Updated class name to match the new CSS */}
+        <h2>Log Into Your Account</h2>
+        <InputField
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          id="loginEmail"
+          placeholder="Enter a valid email address"
+          label="Email address"
+        />
+        {emailError && <p style={{ color: "red" }}>{emailError}</p>}
+        <InputField
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          id="loginPassword"
+          placeholder="Enter password"
+          label="Password"
+        />
+        {passwordError && <p style={{ color: "red" }}>{passwordError}</p>}
+        <div className="checkbox">
+          <Checkbox id="rememberMe" label="Remember me" />
+          <a href="#!" className="text-body">
+            Forgot password?
           </a>
-        </p>
+        </div>
+        <div>
+          <button type="button" onClick={logInUser} disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
+          </button>
+          {serverError && <p style={{ color: "red" }}>{serverError}</p>}
+          <p>
+            Don't have an account?{" "}
+            <a href="/register" className="link-danger">
+              Register
+            </a>
+          </p>
+        </div>
       </div>
     </div>
   );

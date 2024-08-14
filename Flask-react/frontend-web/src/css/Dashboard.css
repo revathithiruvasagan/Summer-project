@@ -1,0 +1,251 @@
+:root {
+  --primary-color: #acf372;
+  --font-color: #333;
+  --bg-color: #f4f4f4;
+  --container-bg-color: #e0f7e4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  font-weight: bolder;
+  color: var(--font-color);
+  background-color: #99dc90;
+}
+
+.blackText {
+  font-family: "Outfit", sans-serif;
+  font-size: 19px;
+}
+.container {
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  min-height: 80vh;
+  padding: 50px;
+  max-width: 1100px;
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  margin: 50px auto;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1250px;
+  padding: 5px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #585858;
+}
+
+.nav {
+  display: flex;
+  gap: 45px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #585858;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.authButtons {
+  display: flex;
+  gap: 45px;
+}
+
+.loginButton,
+.signUpButton {
+  padding: 8px 17px;
+  border: 2px solid var(--primary-color);
+  border-radius: 20px;
+  text-decoration: none;
+  color: #81dc75;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.loginButton {
+  background-color: var(--primary-color);
+  color: #585858;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.loginButton1 {
+  background-color: #73ec63;
+  color: #111010;
+  margin-left: 115px;
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 12px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 5px 10px 17px rgba(0, 0, 0, 0.6);
+}
+
+.signUpButton {
+  color: #585858;
+  border: 2px solid #585858;
+}
+.loginButton:hover {
+  background-color: #27ae60;
+}
+
+.signUpButton:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: last baseline;
+  align-items: center;
+  margin-left: 0%;
+  text-align: left;
+}
+.contentContainer {
+  display: flex;
+  height: 56vh;
+  width: 150vh;
+  margin: 160px;
+  margin-top: 15%;
+  margin-bottom: 15%;
+  gap: 80px;
+}
+
+.belowContainer {
+  flex: 1;
+  padding: 50px;
+  background-color: whitesmoke;
+  border-radius: 40px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.otherHalf {
+  flex: 1;
+  padding: 50px;
+  width: 69px;
+}
+
+.logoImage {
+  width: 40px;
+}
+.heading {
+  font-size: 36px;
+  font-weight: bold;
+  color: var(--font-color);
+  text-align: center;
+  justify-content: left;
+  align-items: left;
+  margin-left: 0%;
+}
+.greenText1 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #006700;
+  text-align: center;
+  margin-top: 0%;
+  font-family: "Outfit", sans-serif;
+}
+.headingEx {
+  font-size: 30px;
+  font-weight: bold;
+  color: #585858;
+  text-align: center;
+  margin-top: 0%;
+}
+.headingExe {
+  font-family: "Outfit", sans-serif;
+  font-weight: bolder;
+  font-size: 34px;
+  color: #515050;
+}
+.headingExee {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 28px;
+  color: #000000;
+  text-align: center;
+}
+.greenText {
+  color: #01c901;
+}
+.goldText {
+  color: #e8c900;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .authButtons {
+    margin-top: 10px;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .loginButton,
+  .signUpButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .heading {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+}
