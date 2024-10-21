@@ -1,0 +1,132 @@
+body {
+    background-color: #A1DB7D;
+    margin : 38px;
+  }
+  
+  .chatbot-container {
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 20px;
+    max-width: 650px;
+    margin: 0 auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  .chat-header {
+    font-size: 30px;
+    font-weight: bold;
+    color: #006700;
+  }
+  
+  .chat-history {
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+  }
+  
+  .chat-entry {
+    margin: 15px;
+  }
+  
+  .user-message {
+    background-color: white; /* Change as needed */
+    padding: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
+    margin-bottom: 7px;
+    margin-left: 50%;
+  
+    font-size: 17px;
+    border: #01C901 solid 3.5px;
+    font-weight: bold;
+    word-wrap: break-word;
+    align-self: flex-end;
+    max-width: 50%; 
+  
+  }
+  
+  .bot-message {
+    background-color: #A1DB7D;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 50%; 
+    word-wrap: break-word;
+    align-self: flex-start;
+  }
+  
+  .chat-history::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+  }
+  
+  .chat-history::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+  }
+  
+  .chat-history::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .chat-input {
+    flex-grow: 1;
+    width: 80%;
+    padding: 10px;
+    font-size: 17px;
+    margin-left : 0;
+    
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    padding: 13px 35px;
+    border-radius: 50px;
+    border: #A1DB7D solid 1px;
+    background-color : #A1DB7D;
+    color:#585858;
+  }
+  
+  input[type="text"]::placeholder {
+    color: #585858;
+  }
+  
+  input[type="text"]:focus {
+    border: #006700 solid 1px;
+  }
+  
+  .send-button {
+    background-color: #A1DB7D;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #A1DB7D;
+    color: #A1DB7D;
+  }
+  

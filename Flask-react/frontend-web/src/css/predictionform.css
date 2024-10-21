@@ -1,0 +1,123 @@
+/* Overall styling */
+.prediction-form-page {
+  background-color: #a1db7d;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+/* Professional font */
+h1,
+h2 {
+  font-family: "Arial Black", Gadget, sans-serif;
+  color: #2c3e50;
+  font-size: 1.8rem; /* Reduced size */
+}
+
+p,
+label {
+  font-family: "Helvetica", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Flexbox layout for input fields */
+.input-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.input-field {
+  flex: 1;
+  margin: 10px;
+  min-width: 48%; /* Adjusted to give equal width */
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for input fields */
+input[type="text"]:hover {
+  background-color: #e0e0e0;
+}
+
+/* Buttons */
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  margin-top: 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05); /* Slight hover scale effect */
+}
+
+/* Graph container with reduced size */
+.graph-container {
+  border: 2px solid #2c3e50;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+}
+
+.graph-container img {
+  max-width: 80%; /* Reduced the size of the graph */
+}
+
+/* Separate div for description */
+.description-section {
+  background-color: #a1db7d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+/* Separate div for calculations */
+.calculation-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+}
+
+/* Q&A Section */
+.qna-description {
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .input-field {
+    min-width: 100%;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.5rem; /* Smaller headings on smaller screens */
+  }
+}

@@ -2,7 +2,7 @@
   --primary-color: #acf372;
   --font-color: #333;
   --input-border-color: #006400;
-  --placeholder-color: #999; /* Custom color for the placeholder */
+  --placeholder-color: #999;
   --bg-color: #f4f4f4;
   --container-bg-color: #e0f7e4;
 }
@@ -29,7 +29,13 @@
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: bold;
   color: var(--font-color);
+  font-family: sans-serif;
+}
+
+.login-page .input-group {
+  margin-bottom: 15px;
 }
 
 .login-page input[type="email"],
@@ -37,30 +43,27 @@
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 25px;
+  border-radius: 0px;
   border: 2px solid var(--input-border-color);
   outline: none;
-  box-shadow: none;
-  transition: border-color 0.3s ease, color 0.9s ease; /* Smooth transition for the border color and text color */
+  transition: border-color 0.3s ease;
 }
 
 .login-page input[type="email"]::placeholder,
 .login-page input[type="password"]::placeholder {
-  color: var(--placeholder-color); /* Placeholder color */
-  font-size: 16px; /* Optional: Italicize the placeholder text */
-  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+  color: var(--placeholder-color);
+  font-size: 16px;
 }
 
 .login-page input[type="email"]:focus::placeholder,
 .login-page input[type="password"]:focus::placeholder {
-  opacity: 0; /* Gradually hide the placeholder when focused */
+  opacity: 0;
 }
 
 .login-page input[type="email"]:focus,
 .login-page input[type="password"]:focus {
   border-color: var(--input-border-color);
-  outline: none; /* Remove default outline */
-  box-shadow: none; /* Remove the blue shadow */
+  outline: none;
 }
 
 .login-page button {
@@ -71,7 +74,8 @@
   border: none;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   color: #000;
   font-weight: bold;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
@@ -86,21 +90,21 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
+  margin-right: 10px;
 }
 
 .login-page .checkbox label {
   font-size: 14px;
 }
 
-.login-page .text-body,
 .login-page .link-danger {
   font-size: 14px;
   text-decoration: none;
   color: var(--font-color);
+  margin-left: 100px;
 }
 
-.login-page .link-danger:hover,
-.login-page .text-body:hover {
+.login-page .link-danger:hover {
   text-decoration: underline;
   color: var(--primary-color);
 }
