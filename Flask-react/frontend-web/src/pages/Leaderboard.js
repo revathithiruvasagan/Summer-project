@@ -34,29 +34,29 @@ const Leaderboard = () => {
 
   return (
     <>
-      <div className="dashboard">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/challenge">Challenge Overview</Link>
-            </li>
-            <li>
-              <Link to="/task">Daily Task</Link>
-            </li>
-            <li>
-              <Link to="/rewards">Rewards</Link>
-            </li>
-            <li>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
-            <li>
-              <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                Logout
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <div >
+          <nav className="navbar">
+            <ul>
+              <li>
+                <Link to="/challenge">Challenge Overview</Link>
+              </li>
+              <li>
+                <Link to="/task">Daily Task</Link>
+              </li>
+              <li>
+                <Link to="/rewards">Rewards</Link>
+              </li>
+              <li>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
       <div className="leaderboard-container">
         <h1>Leaderboard</h1>
         {error ? (

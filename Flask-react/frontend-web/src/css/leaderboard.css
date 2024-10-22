@@ -1,25 +1,28 @@
-/* Container styling */
 .leaderboard-container {
   padding: 20px;
   background: linear-gradient(135deg, #e9f7e9, #e9f2f7);
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
+  font-family: 'Outfit', sans-serif;
+  margin-top:100px;
+
 }
 
 .leaderboard-container h1 {
   font-size: 2rem;
-  margin-bottom: 30px;
+  margin-bottom:0px;
+  margin-top:0px;
   text-align: center;
   color: #2e7d32;
+  font-family: 'Outfit', sans-serif;
 }
 
-/* Leaderboard items */
 .leaderboard-table {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 13px;
 }
 
 .leaderboard-item {
@@ -32,11 +35,10 @@
   position: relative;
 }
 
-/* Rank Badge styles */
 .rank-badge {
   width: 50px;
   height: 50px;
-  background-color: #f8d90f;
+  background-color: #8bc34a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +46,6 @@
   font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
-  margin-right: 15px;
 }
 
 .rank-1 .rank-badge {
@@ -59,12 +60,6 @@
   background-color: #cd7f32;
 }
 
-.rank-4 .rank-badge,
-.rank-5 .rank-badge {
-  background-color: #8bc34a;
-}
-
-/* User info */
 .user-info {
   display: flex;
   justify-content: space-between;
@@ -89,7 +84,6 @@
   color: #f8d90f;
 }
 
-/* Progress bar */
 .leaderboard-item::after {
   content: "";
   position: absolute;
@@ -126,7 +120,6 @@
   background-color: #8bc34a;
 }
 
-/* Extra styling */
 table {
   border-collapse: collapse;
   width: 100%;
@@ -149,4 +142,3 @@ td.stars {
   font-size: 1.5rem;
   color: #f8d90f;
 }
-    

@@ -47,7 +47,7 @@ def get_db_connection():
             host="localhost",
             database="summerproject",
             user="postgres",
-            password="remo&rt",  # Consider changing this to a password without special characters
+            password="remo&rt",
             port="5432"
         )
         return conn
@@ -102,6 +102,7 @@ def login():
     user = cur.fetchone()
     cur.close()
     conn.close()
+    
 
     if user and bcrypt.check_password_hash(user[1], password):
         access_token = create_access_token(identity=user[0])
@@ -115,7 +116,6 @@ def login():
 def protected():
     current_user_id = get_jwt_identity()
     return jsonify(logged_in_as=current_user_id), 200
-
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 data_dir = os.path.join(base_dir, '..', '..', 'data')
@@ -827,7 +827,7 @@ def complete_task():
                     INSERT INTO user_status (user_id, total_points, current_title, stars, last_updated)
                     VALUES (%s, %s, %s, %s, %s)
                     ON CONFLICT (user_id) DO UPDATE
-                    SET total_points = EXCLUDED.total_points,
+                    SET total_points = user_status.total_points + EXCLUDED.total_points,
                         current_title = EXCLUDED.current_title,
                         stars = EXCLUDED.stars,
                         last_updated = EXCLUDED.last_updated;
@@ -981,6 +981,8 @@ def get_rewards():
 
     cur.close()
     conn.close()
+
+    print(f"rewards : {rewards} and cuurent : {current_reward}")
 
     return jsonify({
         'rewards': rewards,

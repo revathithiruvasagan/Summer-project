@@ -3,6 +3,7 @@ import axios from "axios";
 import { useAuth } from "../context/authContext";
 import { Link, useNavigate } from "react-router-dom";
 import ModalForm from "./ModalForm";
+import "../css/overview.css";
 
 const ChallengeOverview = () => {
   const { isAuthenticated } = useAuth();
@@ -66,6 +67,12 @@ const ChallengeOverview = () => {
     }
   };
 
+  const getCurrentDate = () => {
+    const date = new Date();
+    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
+  };
+
   if (!isAuthenticated) return <p>Please log in to view this page.</p>;
 
   if (challengeStatus === null) return <p>Loading...</p>;
@@ -75,8 +82,8 @@ const ChallengeOverview = () => {
   if (challengeStatus.status === "not_started") {
     return (
       <>
-        <div className="dashboard">
-          <nav>
+        <div >
+          <nav className="navbar">
             <ul>
               <li>
                 <Link to="/challenge">Challenge Overview</Link>
@@ -118,31 +125,32 @@ const ChallengeOverview = () => {
 
   return (
     <>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/challenge">Challenge Overview</Link>
-            </li>
-            <li>
-              <Link to="/task">Daily Task</Link>
-            </li>
-            <li>
-              <Link to="/rewards">Rewards</Link>
-            </li>
-            <li>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
-            <li>
-              <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                Logout
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <div >
+          <nav className="navbar">
+            <ul>
+              <li>
+                <Link to="/challenge">Challenge Overview</Link>
+              </li>
+              <li>
+                <Link to="/task">Daily Task</Link>
+              </li>
+              <li>
+                <Link to="/rewards">Rewards</Link>
+              </li>
+              <li>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-      <div>
+
+      <div className="overview">
         <h1>User Challenges</h1>
         <table>
           <thead>
@@ -155,16 +163,23 @@ const ChallengeOverview = () => {
             </tr>
           </thead>
           <tbody>
-            {challenges.map((challenge, index) => (
-              <tr key={index}>
-                <td>{challenge.challenge_day}</td>
-                <td>{challenge.description}</td>
-                <td>{challenge.status}</td>
-                <td>{challenge.points}</td>
-                <td>{challenge.points_won}</td>
-              </tr>
-            ))}
+            {challenges.map((challenge, index) => {
+              const date = new Date(challenge.challenge_day);
+              const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
+              const formattedDate = date.toLocaleDateString('en-US', options);
+
+              return (
+                <tr key={index} className={formattedDate === getCurrentDate() ? 'current-date-row' : ''}>
+                  <td>{formattedDate}</td>
+                  <td>{challenge.description}</td>
+                  <td>{challenge.status}</td>
+                  <td>{challenge.points}</td>
+                  <td>{challenge.points_won}</td>
+                </tr>
+              );
+            })}
           </tbody>
+
         </table>
       </div>
     </>

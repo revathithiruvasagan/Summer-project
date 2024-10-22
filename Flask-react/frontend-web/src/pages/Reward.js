@@ -4,6 +4,7 @@ import { useAuth } from "../context/authContext";
 import { Link } from "react-router-dom";
 //import "../styles/Rewards.css";
 //import "../styles/Dashboard.css";
+import "../css/reward.css";
 
 const Rewards = () => {
   const [rewards, setRewards] = useState([]);
@@ -38,29 +39,30 @@ const Rewards = () => {
 
   return (
     <>
-      <div className="dashboard">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/challenge">Challenge Overview</Link>
-            </li>
-            <li>
-              <Link to="/task">Daily Task</Link>
-            </li>
-            <li>
-              <Link to="/rewards">Rewards</Link>
-            </li>
-            <li>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
-            <li>
-              <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                Logout
-              </Link>
-            </li>
-          </ul>
-        </nav>
+      <div>
+          <nav className="navbar">
+            <ul>
+              <li>
+                <Link to="/challenge">Challenge Overview</Link>
+              </li>
+              <li>
+                <Link to="/task">Daily Task</Link>
+              </li>
+              <li>
+                <Link to="/rewards">Rewards</Link>
+              </li>
+              <li>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </nav>
       </div>
+      
       <div className="rewards-container">
         <h1>Rewards</h1>
         {loading ? (

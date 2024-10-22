@@ -92,49 +92,49 @@ const DailyTask = () => {
 
   return (
     <>
-      <div className="dashboard">
-        <nav>
-          <ul>
-            <li>
-              <Link to="/challenge">Challenge Overview</Link>
-            </li>
-            <li>
-              <Link to="/task">Daily Task</Link>
-            </li>
-            <li>
-              <Link to="/rewards">Rewards</Link>
-            </li>
-            <li>
-              <Link to="/leaderboard">Leaderboard</Link>
-            </li>
-            <li>
-              <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                Logout
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <div>
+          <nav className="navbar">
+            <ul>
+              <li>
+                <Link to="/challenge">Challenge Overview</Link>
+              </li>
+              <li>
+                <Link to="/task">Daily Task</Link>
+              </li>
+              <li>
+                <Link to="/rewards">Rewards</Link>
+              </li>
+              <li>
+                <Link to="/leaderboard">Leaderboard</Link>
+              </li>
+              <li>
+                <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
-      <div>
+      <div className="dailytask">
         <h1>Daily Task</h1>
         {loading ? (
           <p>Loading...</p>
         ) : error ? (
           <div>
-            <p>{error}</p>
+            <p style={{ fontFamily: 'Outfit, sans-serif' }}>{error}</p>
             <Link to="/challenge">Go to Challenge Page</Link>
           </div>
         ) : (
           <div>
-            <p>{task}</p>
+            <p style={{ fontFamily: 'Outfit, sans-serif' }}>{task}</p>
             {taskStatus === "completed" ? (
               <div>
-                <p>You have already completed the task.</p>
+                <p style={{ fontFamily: 'Outfit, sans-serif' }}>You have already completed the task.</p>
                 <button onClick={handleRevoke}>Revoke</button>
               </div>
             ) : (
-              <button onClick={handleComplete}>Completed</button>
+              <button onClick={handleComplete}>Complete</button>
             )}
           </div>
         )}
