@@ -120,14 +120,6 @@ button:hover {
   max-width: 80%; /* Reduced the size of the graph */
 }
 
-/* Separate div for description */
-.description-section {
-  background-color: #a1db7d;
-  padding: 5px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-}
-
 /* Separate div for calculations */
 .calculation-section {
   background-color: #ffffff;
@@ -155,7 +147,7 @@ button:hover {
   text-align: center;
 }
 
-.qna-description input {
+.qna-description input[type="text"] {
   width: 300px;
   padding: 10px;
   border-radius: 8px;
@@ -165,8 +157,6 @@ button:hover {
   transition: background-color 0.3s ease;
   padding: 8px;
   box-sizing: border-box;
-  gap: 30px;
-  text-align: center;
 }
 @media (max-width: 768px) {
   .input-field {

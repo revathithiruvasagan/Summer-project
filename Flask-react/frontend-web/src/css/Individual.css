@@ -1,5 +1,5 @@
-.App {
-  font-family: Arial, sans-serif;
+.individual {
+  font-family: "Helvetica Neue", Arial, sans-serif;
   text-align: center;
   margin: 0 auto;
   max-width: 800px;
@@ -70,7 +70,6 @@ form {
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Style for checked state */
 .checkbox-buttons input[type="checkbox"]:checked + span::before {
   background-color: #ffdd00; /* Background color when checked */
   border-color: ffdd00; /* Border color when checked */
@@ -97,6 +96,7 @@ form {
   background-color: #ffffff;
   cursor: pointer;
   font-size: 16px;
+  color: #000000;
 }
 
 .radio-button.selected {
@@ -109,13 +109,14 @@ form {
   margin-right: 10px;
 }
 
-input[type="text"] {
-  padding: 10px;
-  border: 2px solid #000000;
-  border-radius: 25px;
-  border-radius: 5px;
+.individual input[type="text"] {
+  margin-top: 10px;
+  padding: 8px;
+  border-bottom: 1px solid #000000;
+  border-radius: 0%;
   font-size: 16px;
   width: 100%;
+  background-color: rgba(0, 128, 0, 0.171);
 }
 
 .submit-button {

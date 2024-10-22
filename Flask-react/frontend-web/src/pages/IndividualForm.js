@@ -283,10 +283,11 @@ const IndividualForm = () => {
 
   const renderCheckboxGroup = (question, options) => (
     <div className="input-group">
-      <label>{question}:</label>
+      <label>{question} :</label>
       <div className="checkbox-buttons">
         {options.map((option) => (
           <label key={option.key}>
+            <br></br>
             <input
               type="checkbox"
               name={question}
@@ -303,7 +304,8 @@ const IndividualForm = () => {
 
   const renderRadioGroup = (question, options) => (
     <div className="input-group">
-      <label>{question}:</label>
+      <label>{question} :</label>
+      <br></br>
       <div className="radio-buttons">
         {options.map((option) => (
           <button
@@ -325,6 +327,7 @@ const IndividualForm = () => {
   const renderTextInput = (question) => (
     <div className="input-group">
       <label>{question}:</label>
+      <br></br>
       <input
         type="text"
         name={question}
@@ -337,7 +340,7 @@ const IndividualForm = () => {
 
   return (
     <>
-      <div className="App">
+      <div className="individual">
         <h1>Carbon Footprint Calculator</h1>
         <form onSubmit={handleSubmit}>
           {questions.map((q, index) => (
