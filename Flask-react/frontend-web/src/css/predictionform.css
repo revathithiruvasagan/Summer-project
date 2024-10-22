@@ -1,4 +1,3 @@
-/* Overall styling */
 .prediction-form-page {
   background-color: #a1db7d;
   padding: 20px;
@@ -7,14 +6,29 @@
   color: #333;
 }
 
-/* Professional font */
 h1,
-h2 {
-  font-family: "Arial Black", Gadget, sans-serif;
+h3 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #2c3e50;
-  font-size: 1.8rem; /* Reduced size */
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 600;
+  padding: 30px;
 }
 
+.para {
+  display: flex;
+  padding: 40px;
+  gap: 50px;
+  background-color: #fffffff3;
+  border-radius: 10px;
+  height: auto;
+}
+
+.image {
+  width: 500px;
+  height: auto;
+}
 p,
 label {
   font-family: "Helvetica", sans-serif;
@@ -22,35 +36,58 @@ label {
   line-height: 1.6;
 }
 
-/* Flexbox layout for input fields */
+.calculation-section label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-size: medium;
+  font-family: "Helvetica", sans-serif;
+  font-weight: bold;
+}
+.calculation-section input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f95f;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.calculation-section {
+  width: 100%;
+  margin: 20px auto;
+}
+
 .input-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 10px 0;
+  gap: 80px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Each column takes up equal space */
+  gap: 10px; /* Space between input fields inside a column */
+  padding: 10px;
 }
 
 .input-field {
-  flex: 1;
-  margin: 10px;
-  min-width: 48%; /* Adjusted to give equal width */
+  display: flex;
+  flex-direction: column;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
-}
-
-/* Hover effect for input fields */
 input[type="text"]:hover {
-  background-color: #e0e0e0;
+  background-color: #9dd1f170;
 }
 
+.para p {
+  font-size: larger;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: auto;
+}
 /* Buttons */
 button {
   background-color: #4caf50;
@@ -86,7 +123,7 @@ button:hover {
 /* Separate div for description */
 .description-section {
   background-color: #a1db7d;
-  padding: 20px;
+  padding: 5px;
   border-radius: 10px;
   margin-bottom: 30px;
 }
@@ -108,9 +145,29 @@ button:hover {
   background-color: #f0f0f0;
   border: 1px solid #dcdcdc;
   border-radius: 8px;
+  text-align: center;
 }
 
-/* Media Queries */
+.qna-description p {
+  font-size: larger;
+  color: #333;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.qna-description input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f95f;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  padding: 8px;
+  box-sizing: border-box;
+  gap: 30px;
+  text-align: center;
+}
 @media (max-width: 768px) {
   .input-field {
     min-width: 100%;
@@ -118,6 +175,6 @@ button:hover {
 
   h1,
   h2 {
-    font-size: 1.5rem; /* Smaller headings on smaller screens */
+    font-size: 1.5rem;
   }
 }
