@@ -171,6 +171,12 @@ const Dashboard = () => {
         </div>
         <div className="belowContainer">
           <p className="greenText1">CONTACT US</p>
+          <h4 className="blackText">Email : EcoInSights@gmail.com</h4>
+          <h4 className="blackText">Contact : 123-6788-987</h4>
+          <h4 className="blackText">
+            Address : 1234 Street Name, City, Country
+          </h4>
+
           <br></br>
         </div>
       </div>

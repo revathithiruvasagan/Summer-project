@@ -102,9 +102,9 @@ const Home = () => {
       <div className="sidebar">
         <p
           style={{
-            fontSize: "27px",
+            fontSize: "20px",
             fontFamily: '"Outfit", sans-serif',
-            fontWeight: 900,
+            fontWeight: 800,
           }}
         >
           {" "}
@@ -115,7 +115,7 @@ const Home = () => {
             style={{
               width: "24px",
               height: "auto",
-              marginRight: "6px",
+              marginRight: "2px",
             }}
           ></img>{" "}
           EcoInSights
@@ -144,11 +144,6 @@ const Home = () => {
           <FontAwesomeIcon icon={faSignOutAlt} />
           &nbsp; &nbsp; &nbsp;Logout
         </Link>
-
-        <div className="mode-toggle">
-          <span>Light</span>
-          <span>Dark</span>
-        </div>
       </div>
       <div className="main-content">
         <div className="dashboard-header">
