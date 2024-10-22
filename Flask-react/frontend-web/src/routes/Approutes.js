@@ -2,10 +2,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Dashboard from "../pages/Dashboard";
-import LoginPage from "../pages/Login";
-import RegisterPage from "../pages/Register";
-import Home from "../pages/Home";
+import Dashboard from "../pages/dashboard";
+import LoginPage from "../pages/login";
+import RegisterPage from "../pages/register";
+import Home from "../pages/home";
 import PredictionForm from "../pages/PredictionForm";
 import IndividualForm from "../pages/IndividualForm";
 import Chatbot from "../pages/Chatbot";

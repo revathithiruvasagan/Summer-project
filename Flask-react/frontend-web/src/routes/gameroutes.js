@@ -4,10 +4,10 @@ import ChallengeOverview from "../pages/ChallengeOverview";
 import DailyTask from "../pages/DailyTask";
 import Rewards from "../pages/Reward";
 import Leaderboard from "../pages/Leaderboard";
-import Login from "../pages/Login";
+import Login from "../pages/login";
 import ProtectedRoute from "../pages/ProtectedRoute";
-import Home from "../pages/Home";
-import Register from "../pages/Register";
+import Home from "../pages/home";
+import Register from "../pages/register";
 import GameDashboard from "../pages/Game";
 
 const AppRouter = () => {
