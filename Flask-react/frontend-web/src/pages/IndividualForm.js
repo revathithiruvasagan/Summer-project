@@ -272,7 +272,7 @@ const IndividualForm = () => {
     try {
       // Send payload to backend
       const response = await axios.post(
-        "http://localhost:5000/predictindividual",
+        "https://ecoinsights-backend.onrender.com/predictindividual",
         payload
       );
       setPrediction(response.data.prediction);

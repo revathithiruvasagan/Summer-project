@@ -8,10 +8,13 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://ecoinsights-backend.onrender.com/login",
+        {
+          email,
+          password,
+        }
+      );
       localStorage.setItem("token", response.data.access_token);
       setIsAuthenticated(true);
     } catch (error) {

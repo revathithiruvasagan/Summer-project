@@ -13,7 +13,7 @@ const ModalForm = ({ isOpen, onClose, onSuccess }) => {
 
       // Start the challenge
       const response = await axios.post(
-        "http://localhost:5000/start_challenge",
+        "https://ecoinsights-backend.onrender.com/start_challenge",
         { name: name },
         {
           headers: {
@@ -29,7 +29,7 @@ const ModalForm = ({ isOpen, onClose, onSuccess }) => {
 
         // Populate the user_challenges table
         await axios.post(
-          "http://localhost:5000/user_challenge",
+          "https://ecoinsights-backend.onrender.com/user_challenge",
           { challenge_id: challengeId },
           {
             headers: {

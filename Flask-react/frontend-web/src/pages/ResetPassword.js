@@ -20,10 +20,13 @@ const ResetPassword = () => {
     }
 
     try {
-      await axios.post("http://localhost:5000/reset-password", {
-        token,
-        password,
-      });
+      await axios.post(
+        "https://ecoinsights-backend.onrender.com/reset-password",
+        {
+          token,
+          password,
+        }
+      );
       setMessage("Password has been reset successfully.");
       navigate("/login");
     } catch (error) {

@@ -15,7 +15,7 @@ const Leaderboard = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await axios.get(
-            "http://localhost:5000/leaderboard",
+            "https://ecoinsights-backend.onrender.com/leaderboard",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -34,29 +34,29 @@ const Leaderboard = () => {
 
   return (
     <>
-      <div >
-          <nav className="navbar">
-            <ul>
-              <li>
-                <Link to="/challenge">Challenge Overview</Link>
-              </li>
-              <li>
-                <Link to="/task">Daily Task</Link>
-              </li>
-              <li>
-                <Link to="/rewards">Rewards</Link>
-              </li>
-              <li>
-                <Link to="/leaderboard">Leaderboard</Link>
-              </li>
-              <li>
-                <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/challenge">Challenge Overview</Link>
+            </li>
+            <li>
+              <Link to="/task">Daily Task</Link>
+            </li>
+            <li>
+              <Link to="/rewards">Rewards</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+            <li>
+              <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <div className="leaderboard-container">
         <h1>Leaderboard</h1>
         {error ? (

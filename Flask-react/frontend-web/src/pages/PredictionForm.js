@@ -30,9 +30,12 @@ const PredictionForm = () => {
     event.preventDefault();
     console.log("Input data being sent:", input);
     try {
-      const response = await axios.post("http://127.0.0.1:5000/predict", {
-        input: Object.values(input).map(Number),
-      });
+      const response = await axios.post(
+        "https://ecoinsights-backend.onrender.com/predict",
+        {
+          input: Object.values(input).map(Number),
+        }
+      );
       setPrediction(response.data.prediction);
     } catch (error) {
       console.error("Error during prediction:", error);
@@ -46,10 +49,13 @@ const PredictionForm = () => {
   const fetchGraph = async () => {
     if (country) {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/plot", {
-          params: { country },
-          responseType: "blob",
-        });
+        const response = await axios.get(
+          "https://ecoinsights-backend.onrender.com/plot",
+          {
+            params: { country },
+            responseType: "blob",
+          }
+        );
         setGraphUrl(URL.createObjectURL(response.data));
       } catch (error) {
         alert("Error fetching graph.");
@@ -60,9 +66,12 @@ const PredictionForm = () => {
 
   const fetchTop10Graph = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:5000/top10plot", {
-        responseType: "blob",
-      });
+      const response = await axios.get(
+        "https://ecoinsights-backend.onrender.com/top10plot",
+        {
+          responseType: "blob",
+        }
+      );
       setTop10GraphUrl(URL.createObjectURL(response.data));
     } catch (error) {
       alert("Error fetching top 10 countries graph.");

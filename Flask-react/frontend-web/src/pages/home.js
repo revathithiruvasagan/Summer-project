@@ -44,9 +44,12 @@ const Home = () => {
   useEffect(() => {
     const fetchGlobalGraph = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/globalplot", {
-          responseType: "blob",
-        });
+        const response = await axios.get(
+          "https://ecoinsights-backend.onrender.com/globalplot",
+          {
+            responseType: "blob",
+          }
+        );
         setGlobalGraphUrl(URL.createObjectURL(response.data));
       } catch (error) {
         console.error("Error fetching global graph:", error);
@@ -55,9 +58,12 @@ const Home = () => {
 
     const fetchTop10Graph = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:5000/top10plot", {
-          responseType: "blob",
-        });
+        const response = await axios.get(
+          "https://ecoinsights-backend.onrender.com/top10plot",
+          {
+            responseType: "blob",
+          }
+        );
         setTop10GraphUrl(URL.createObjectURL(response.data));
       } catch (error) {
         console.error("Error fetching top 10 graph:", error);
@@ -74,10 +80,13 @@ const Home = () => {
         const params = new URLSearchParams();
         params.append("countries", country);
 
-        const response = await axios.get("http://127.0.0.1:5000/homeplot", {
-          params: params,
-          responseType: "blob",
-        });
+        const response = await axios.get(
+          "https://ecoinsights-backend.onrender.com/homeplot",
+          {
+            params: params,
+            responseType: "blob",
+          }
+        );
         setCountryGraphUrl(URL.createObjectURL(response.data));
       } catch (error) {
         console.error("Error fetching country graph:", error);

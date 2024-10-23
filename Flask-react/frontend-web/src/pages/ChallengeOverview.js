@@ -24,7 +24,7 @@ const ChallengeOverview = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await axios.post(
-            "http://localhost:5000/challenge_status",
+            "https://ecoinsights-backend.onrender.com/challenge_status",
             {},
             {
               headers: {
@@ -52,7 +52,7 @@ const ChallengeOverview = () => {
   const fetchUserChallenges = async (token) => {
     try {
       const challengeResponse = await axios.post(
-        "http://localhost:5000/fetch_user_challenge",
+        "https://ecoinsights-backend.onrender.com/fetch_user_challenge",
         {},
         {
           headers: {
@@ -69,8 +69,13 @@ const ChallengeOverview = () => {
 
   const getCurrentDate = () => {
     const date = new Date();
-    const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const options = {
+      weekday: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    return date.toLocaleDateString("en-US", options);
   };
 
   if (!isAuthenticated) return <p>Please log in to view this page.</p>;
@@ -82,7 +87,7 @@ const ChallengeOverview = () => {
   if (challengeStatus.status === "not_started") {
     return (
       <>
-        <div >
+        <div>
           <nav className="navbar">
             <ul>
               <li>
@@ -125,30 +130,29 @@ const ChallengeOverview = () => {
 
   return (
     <>
-      <div >
-          <nav className="navbar">
-            <ul>
-              <li>
-                <Link to="/challenge">Challenge Overview</Link>
-              </li>
-              <li>
-                <Link to="/task">Daily Task</Link>
-              </li>
-              <li>
-                <Link to="/rewards">Rewards</Link>
-              </li>
-              <li>
-                <Link to="/leaderboard">Leaderboard</Link>
-              </li>
-              <li>
-                <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-
+      <div>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/challenge">Challenge Overview</Link>
+            </li>
+            <li>
+              <Link to="/task">Daily Task</Link>
+            </li>
+            <li>
+              <Link to="/rewards">Rewards</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+            <li>
+              <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div className="overview">
         <h1>User Challenges</h1>
@@ -165,11 +169,21 @@ const ChallengeOverview = () => {
           <tbody>
             {challenges.map((challenge, index) => {
               const date = new Date(challenge.challenge_day);
-              const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' };
-              const formattedDate = date.toLocaleDateString('en-US', options);
+              const options = {
+                weekday: "short",
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              };
+              const formattedDate = date.toLocaleDateString("en-US", options);
 
               return (
-                <tr key={index} className={formattedDate === getCurrentDate() ? 'current-date-row' : ''}>
+                <tr
+                  key={index}
+                  className={
+                    formattedDate === getCurrentDate() ? "current-date-row" : ""
+                  }
+                >
                   <td>{formattedDate}</td>
                   <td>{challenge.description}</td>
                   <td>{challenge.status}</td>
@@ -179,7 +193,6 @@ const ChallengeOverview = () => {
               );
             })}
           </tbody>
-
         </table>
       </div>
     </>

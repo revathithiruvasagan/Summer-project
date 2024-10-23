@@ -15,11 +15,14 @@ const Register = () => {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-        email,
-        password,
-        rememberMe,
-      });
+      const response = await axios.post(
+        "https://ecoinsights-backend.onrender.com/register",
+        {
+          email,
+          password,
+          rememberMe,
+        }
+      );
       const { access_token } = response.data;
       localStorage.setItem("token", access_token);
       navigate("/login");

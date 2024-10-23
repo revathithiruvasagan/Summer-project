@@ -18,11 +18,14 @@ const Rewards = () => {
       const fetchRewards = async () => {
         try {
           const token = localStorage.getItem("token");
-          const response = await axios.get("http://localhost:5000/rewards", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          });
+          const response = await axios.get(
+            "https://ecoinsights-backend.onrender.com/rewards",
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          );
 
           setRewards(response.data.rewards);
           setCurrentReward(response.data.current_reward);
@@ -40,29 +43,29 @@ const Rewards = () => {
   return (
     <>
       <div>
-          <nav className="navbar">
-            <ul>
-              <li>
-                <Link to="/challenge">Challenge Overview</Link>
-              </li>
-              <li>
-                <Link to="/task">Daily Task</Link>
-              </li>
-              <li>
-                <Link to="/rewards">Rewards</Link>
-              </li>
-              <li>
-                <Link to="/leaderboard">Leaderboard</Link>
-              </li>
-              <li>
-                <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </nav>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/challenge">Challenge Overview</Link>
+            </li>
+            <li>
+              <Link to="/task">Daily Task</Link>
+            </li>
+            <li>
+              <Link to="/rewards">Rewards</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+            <li>
+              <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-      
+
       <div className="rewards-container">
         <h1>Rewards</h1>
         {loading ? (

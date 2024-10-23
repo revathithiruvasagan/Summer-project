@@ -25,9 +25,12 @@ const Chatbot = () => {
     console.log("Sending message:", trimmedInput);
 
     try {
-      const response = await axios.post("http://localhost:5000/ask", {
-        message: trimmedInput,
-      });
+      const response = await axios.post(
+        "https://ecoinsights-backend.onrender.com/ask",
+        {
+          message: trimmedInput,
+        }
+      );
 
       console.log("Response from backend:", response.data);
 

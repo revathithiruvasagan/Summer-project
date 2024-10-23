@@ -18,7 +18,7 @@ const DailyTask = () => {
         try {
           const token = localStorage.getItem("token");
           const response = await axios.get(
-            "http://localhost:5000/fetch_today",
+            "https://ecoinsights-backend.onrender.com/fetch_today",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -29,7 +29,7 @@ const DailyTask = () => {
 
           // Check task status
           const statusResponse = await axios.get(
-            "http://localhost:5000/task_status",
+            "https://ecoinsights-backend.onrender.com/task_status",
             {
               headers: {
                 Authorization: `Bearer ${token}`,
@@ -56,7 +56,7 @@ const DailyTask = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/complete_task",
+        "https://ecoinsights-backend.onrender.com/complete_task",
         {},
         {
           headers: {
@@ -75,7 +75,7 @@ const DailyTask = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.post(
-        "http://localhost:5000/revoke_task",
+        "https://ecoinsights-backend.onrender.com/revoke_task",
         {},
         {
           headers: {
@@ -92,29 +92,29 @@ const DailyTask = () => {
 
   return (
     <>
-        <div>
-          <nav className="navbar">
-            <ul>
-              <li>
-                <Link to="/challenge">Challenge Overview</Link>
-              </li>
-              <li>
-                <Link to="/task">Daily Task</Link>
-              </li>
-              <li>
-                <Link to="/rewards">Rewards</Link>
-              </li>
-              <li>
-                <Link to="/leaderboard">Leaderboard</Link>
-              </li>
-              <li>
-                <Link to="/" onClick={() => localStorage.removeItem("token")}>
-                  Logout
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
+      <div>
+        <nav className="navbar">
+          <ul>
+            <li>
+              <Link to="/challenge">Challenge Overview</Link>
+            </li>
+            <li>
+              <Link to="/task">Daily Task</Link>
+            </li>
+            <li>
+              <Link to="/rewards">Rewards</Link>
+            </li>
+            <li>
+              <Link to="/leaderboard">Leaderboard</Link>
+            </li>
+            <li>
+              <Link to="/" onClick={() => localStorage.removeItem("token")}>
+                Logout
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
       <div className="dailytask">
         <h1>Daily Task</h1>
@@ -122,15 +122,17 @@ const DailyTask = () => {
           <p>Loading...</p>
         ) : error ? (
           <div>
-            <p style={{ fontFamily: 'Outfit, sans-serif' }}>{error}</p>
+            <p style={{ fontFamily: "Outfit, sans-serif" }}>{error}</p>
             <Link to="/challenge">Go to Challenge Page</Link>
           </div>
         ) : (
           <div>
-            <p style={{ fontFamily: 'Outfit, sans-serif' }}>{task}</p>
+            <p style={{ fontFamily: "Outfit, sans-serif" }}>{task}</p>
             {taskStatus === "completed" ? (
               <div>
-                <p style={{ fontFamily: 'Outfit, sans-serif' }}>You have already completed the task.</p>
+                <p style={{ fontFamily: "Outfit, sans-serif" }}>
+                  You have already completed the task.
+                </p>
                 <button onClick={handleRevoke}>Revoke</button>
               </div>
             ) : (
