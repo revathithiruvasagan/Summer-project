@@ -1,0 +1,8 @@
+Decision Tree - 214937.263
+Polynomial Regression - 91432.752
+Gradient Boosting - 53250.760
+XGBoost - 29724.605
+
+XGBoost - label + one hot encoding
+Desicion Tree - linear and spline interpolation
+

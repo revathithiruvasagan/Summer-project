@@ -1,0 +1,159 @@
+.homepage {
+  display: flex;
+  height: 90vh;
+}
+.icon {
+  margin-right: 10px;
+}
+
+.navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.navigation-container h3 {
+  margin: 0;
+}
+
+.navigation-controls {
+  display: flex;
+  align-items: center;
+}
+
+.nav-arrow {
+  font-size: 24px; /* Adjust the size as needed */
+  cursor: pointer;
+  margin: 0 10px; /* Adjust spacing between arrows */
+  transition: color 0.3s ease;
+}
+
+.nav-arrow:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.sidebar {
+  width: 23%;
+  background-color: #01a901;
+  color: white;
+  padding: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 20px;
+  font-weight: 100;
+  border-radius: 20px 0px 0px 20px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+}
+.Link {
+  margin-right: 30px;
+}
+.mode-toggle {
+  margin-top: auto;
+}
+
+.main-content {
+  width: 80%;
+  padding: 50px;
+  background-color: #f8f9fa;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.chart {
+  width: 48%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.dashboard-footer {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.greenbot-chat {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.chat-button {
+  margin-left: 10px;
+  background-color: #2f9e44;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* CSS for Profile Modal */
+.profile-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-header h1 {
+  color: green;
+}
+
+.user-info {
+  margin-left: 65%;
+  font-size: large;
+  margin-right: 4px;
+  font-weight: 100;
+}
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.profile-section {
+  text-align: center;
+  flex: 1;
+  padding: 10px;
+}
