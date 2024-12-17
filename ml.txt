@@ -6,3 +6,105 @@ XGBoost - 29724.605
 XGBoost - label + one hot encoding
 Desicion Tree - linear and spline interpolation
 
+Here is a structured **report** based on the provided images:
+
+---
+
+# Model Evaluation Report  
+
+## 1. **Mean Squared Error Comparison for Different Models**  
+The Mean Squared Error (MSE) for different machine learning models is summarized below:  
+
+| **Model**               | **Mean Squared Error** |
+|--------------------------|------------------------|
+| Decision Tree           | 214937.263500         |
+| Polynomial Regression   | 91432.752510          |
+| Gradient Boosting       | 53250.760392          |
+| XGBoost                 | 29724.605204          |  
+
+
+### Visualization:  
+- **Decision Tree** has the **highest error** among the models.  
+- **XGBoost** outperforms all the other models with the **lowest Mean Squared Error**.  
+
+---
+
+## 2. **Results for Individual Models**  
+
+### **Random Forest Results**  
+
+| **Index** | **Predicted** | **Original** | **Accuracy** |
+|-----------|---------------|--------------|--------------|
+| 0         | 1225.24       | 978          | 0.910716     |
+| 1         | 1742.68       | 1608         | 0.910716     |
+| 2         | 2084.07       | 2236         | 0.910716     |
+| 3         | 2896.42       | 2834         | 0.910716     |
+| 4         | 2494.46       | 2591         | 0.910716     |  
+
+### **Decision Tree Results**  
+
+| **Index** | **Predicted** | **Original** | **Accuracy** |
+|-----------|---------------|--------------|--------------|
+| 0         | 1340.0        | 978          | 0.793272     |
+| 1         | 1533.0        | 1608         | 0.793272     |
+| 2         | 2012.0        | 2236         | 0.793272     |
+| 3         | 2235.0        | 2834         | 0.793272     |
+| 4         | 2600.0        | 2591         | 0.793272     |  
+
+### **Polynomial Regression Results**  
+
+| **Index** | **Predicted**       | **Original** | **Accuracy** |
+|-----------|---------------------|--------------|--------------|
+| 0         | 1094.403295         | 978          | 0.912059     |
+| 1         | 1428.191364         | 1608         | 0.912059     |
+| 2         | 1968.300444         | 2236         | 0.912059     |
+| 3         | 2676.635946         | 2834         | 0.912059     |
+| 4         | 2512.140175         | 2591         | 0.912059     |  
+
+### **Gradient Boosting Results**  
+
+| **Index** | **Predicted**       | **Original** | **Accuracy** |
+|-----------|---------------------|--------------|--------------|
+| 0         | 1106.207103         | 978          | 0.948783     |
+| 1         | 1658.664674         | 1608         | 0.948783     |
+| 2         | 2360.314587         | 2236         | 0.948783     |
+| 3         | 2768.193541         | 2834         | 0.948783     |
+| 4         | 2508.039901         | 2591         | 0.948783     |  
+
+### **XGBoost Results**  
+
+| **Index** | **Predicted**       | **Original** | **Accuracy** |
+|-----------|---------------------|--------------|--------------|
+| 0         | 1131.814209         | 978          | 0.971411     |
+| 1         | 1575.199219         | 1608         | 0.971411     |
+| 2         | 2081.901367         | 2236         | 0.971411     |
+| 3         | 3192.007568         | 2834         | 0.971411     |
+| 4         | 2479.556396         | 2591         | 0.971411     |  
+
+---
+
+## 3. **Mean Squared Error (MSE) Summary Across All Models**  
+
+| **Model**               | **Mean Squared Error** |
+|--------------------------|------------------------|
+| Random Forest           | 29179.247242          |
+| Decision Tree           | 42987.452700          |
+| Polynomial Regression   | 88972.181272          |
+| Gradient Boosting       | 47525.489801          |
+| XGBoost                 | 8270.210131           |  
+
+### Key Observations:  
+1. **XGBoost** consistently achieves the **lowest MSE**, confirming its superior performance.  
+2. **Random Forest** also shows competitive results with a low MSE.  
+3. **Decision Tree** and **Polynomial Regression** perform worse compared to ensemble models.  
+
+---
+
+## 4. **Conclusion**  
+- **XGBoost** is the best-performing model, achieving the highest accuracy and the lowest Mean Squared Error.  
+- **Random Forest** follows closely, while **Decision Tree** has the poorest performance.  
+- Ensemble methods (XGBoost, Gradient Boosting, Random Forest) outperform traditional approaches.  
+
+This analysis suggests that **XGBoost** is the most reliable choice for future predictions.
+
+--- 
